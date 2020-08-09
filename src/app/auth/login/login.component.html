@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+  <form [formGroup]="loginForm">
+    <div class="form-group col-md-12">
+      <label for="accountNumber">Email</label>
+      <div class="row">
+         <div class="col-md-8">
+<!--           <input type="text" class="form-control" id="accountNumber" name="accountNumber" [(ngModel)]="email" placeholder="Type your email id"/>-->
+           <input formControlName="email" class="form-control" placeholder="Enter First Name" id="accountNumber"
+                  [ngClass]="{ 'is-invalid': formSubmited && formControl.email.errors }" type="text" name="email" required>
+           <div *ngIf="formSubmited && formControl.email.errors" class="invalid-feedback">
+             <div *ngIf="formControl.email.errors.required">Email is required</div>
+           </div>
+         </div>
+        <div class="col-md-4">
+          <button class="form-control btn btn-sm btn-success btn-signin" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./']">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['albums']">Albums</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['todos']">To Dos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a (click)="goToUrl()">{{currentUser.name}}</a> <a style="color: white;"> ({{currentUser.company.name}}) </a>
+    </form>
+    <form class="form-inline my-2 my-lg-0" *ngIf="currentUser">
+      <a style="color: aliceblue; cursor: pointer" (click)="logout()"> | Logout</a>
+    </form>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

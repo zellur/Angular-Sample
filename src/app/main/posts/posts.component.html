@@ -1,0 +1,23 @@
+<div class="container bg-white">
+  <div class="row">
+    <div class="col-8"></div>
+    <div class="col-4">
+      <mat-form-field style="width: 100%; background: #827f7b; display: block">
+        <input autocomplete="off" matInput type="text" [(ngModel)]="searchTerm"  placeholder="Search"/>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div *ngIf="posts | async as posts;">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let post of search(posts.posts)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>{{ post.title }}</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ post.body }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

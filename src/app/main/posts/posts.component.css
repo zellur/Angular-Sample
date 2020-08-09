@@ -1,0 +1,19 @@
+.posts-row {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.posts-row a {
+  font-weight: 600;
+  font-size: 18px;
+}
+.btn-info {
+  background: #4c6a6f;
+}
+form {
+  padding-right: 20px;
+  padding-top: 20px;
+  min-width: 350px;
+}
+form input {
+  border-radius: 5px;
+}

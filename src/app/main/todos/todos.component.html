@@ -1,0 +1,36 @@
+<!--<div class="row justify-content-center">-->
+<!--  <div class="col-md-12">-->
+<!--    <h1 style="text-align: center;">To Do List</h1>-->
+<!--  </div>-->
+<!-- <div class="col-md-12">-->
+<!--   <ngx-datatable class="material" [rows]="row" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"-->
+<!--                  [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'title', dir: 'desc'}]">-->
+<!--     <ngx-datatable-column name="Title">-->
+<!--       <ng-template let-row="row" ngx-datatable-cell-template>-->
+<!--         {{row.title}}-->
+<!--       </ng-template>-->
+<!--     </ngx-datatable-column>-->
+
+<!--     <ngx-datatable-column name="Completed">-->
+<!--       <ng-template let-row="row" ngx-datatable-cell-template>-->
+<!--         {{row.completed}}-->
+<!--       </ng-template>-->
+<!--     </ngx-datatable-column>-->
+<!--   </ngx-datatable>-->
+<!-- </div>-->
+<!--</div>-->
+
+<div class="container bg-white">
+
+  <div class="row">
+    <div class="col-6">
+      <h3>Todo List</h3>
+    </div>
+  </div>
+  <div class="todo" *ngFor="let todo of getTodos()">
+    <mat-checkbox [(ngModel)]="todo.completed" [color]="'primary'" >
+      {{ todo.title }}
+    </mat-checkbox>
+  </div>
+
+</div>
